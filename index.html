@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f8ee">
+    <title>사과 합 10 게임</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <p class="eyebrow">APPLE NUMBER PUZZLE</p>
+        <h1>사과 합 10</h1>
+        <p class="subtitle">이웃한 숫자를 이어 합이 10의 배수가 되게 해보세요.</p>
+      </header>
+
+      <section class="scoreboard" aria-label="게임 정보">
+        <div class="score-card">
+          <span class="score-label">현재 점수</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="timer-card">
+          <span class="score-label">남은 시간</span>
+          <strong id="timer" role="timer" aria-live="off">01:00</strong>
+        </div>
+        <div class="score-card">
+          <span class="score-label">최고 점수</span>
+          <strong id="best-score">0</strong>
+        </div>
+      </section>
+
+      <section class="play-area" aria-label="게임 보드">
+        <div class="board" id="board" role="group" aria-label="8 곱하기 8 숫자 보드"></div>
+        <div class="board-overlay" id="overlay">
+          <div class="overlay-card">
+            <span class="overlay-apple" aria-hidden="true">🍎</span>
+            <p id="overlay-message">숫자를 드래그해 합이 10의 배수가 되도록 이어보세요.</p>
+            <button class="start-button" id="start-button" type="button">게임 시작</button>
+          </div>
+        </div>
+      </section>
+      <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
+
+      <div class="game-footer">
+        <p class="selection-hint" id="selection-hint" aria-live="polite">숫자를 이웃한 순서대로 드래그하세요.</p>
+        <p class="selection-total" id="selection-total" aria-live="polite">선택 합계 <strong>0</strong></p>
+      </div>
+      <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+      <p class="instructions">상하좌우로 붙어 있는 숫자만 선택할 수 있어요. 유효한 합계에서 손을 떼면 점수를 얻습니다.</p>
+    </main>
+  </body>
+</html>
